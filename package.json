@@ -1,0 +1,24 @@
+{
+  "name": "a-ug4v",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "dev": "astro dev",
+    "og:generate": "node scripts/generate-og-images.mjs",
+    "build": "astro build && pnpm og:generate",
+    "preview": "astro preview",
+    "deploy": "pnpm build && wrangler deploy"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.4",
+    "@lucide/astro": "^1.11.0",
+    "astro": "^6.1.9",
+    "budoux": "^0.8.2"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5",
+    "wrangler": "4.22.0"
+  }
+}

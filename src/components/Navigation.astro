@@ -1,0 +1,55 @@
+---
+import { Menu, X } from '@lucide/astro';
+
+type Props = {
+  currentPath: string;
+};
+
+const { currentPath } = Astro.props;
+const links = [
+  { href: '/about/', label: 'ug4v.comについて' },
+  { href: '/guidelines/', label: '利用ガイドライン' },
+  { href: '/terms/', label: '利用規約' },
+];
+
+const normalize = (path: string) => (path.endsWith('/') ? path : `${path}/`);
+const activePath = normalize(currentPath);
+---
+
+<header class="site-header">
+  <a class="brand-mark" href="/" aria-label="ug4v home">
+    <img src="/assets/brand/typo.svg" alt="ug4v" />
+  </a>
+
+  <nav class="desktop-nav" aria-label="主要ナビゲーション">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          aria-current={activePath === normalize(link.href) ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+
+  <details class="mobile-nav">
+    <summary aria-label="メニューを開く">
+      <Menu class="menu-icon menu-icon-open" size={22} strokeWidth={2.5} aria-hidden="true" />
+      <X class="menu-icon menu-icon-close" size={22} strokeWidth={2.5} aria-hidden="true" />
+    </summary>
+    <nav aria-label="モバイルナビゲーション">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-current={activePath === normalize(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </details>
+</header>
