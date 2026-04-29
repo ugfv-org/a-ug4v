@@ -87,15 +87,11 @@ function renderOgImage({ title, description, slug, site, tokens, colorScheme, lo
       <stop offset="0.52" stop-color="${tertiary}"/>
       <stop offset="1" stop-color="${secondary}"/>
     </linearGradient>
-    <pattern id="grid" width="${dark ? 48 : 44}" height="${dark ? 48 : 44}" patternUnits="userSpaceOnUse">
-      <path d="M ${dark ? 48 : 44} 0 L 0 0 0 ${dark ? 48 : 44}" fill="none" stroke="${primary}" stroke-opacity="${dark ? 0.14 : 0.11}" stroke-width="1"/>
-    </pattern>
     <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="${primary}" flood-opacity="${dark ? 0.22 : 0.18}"/>
     </filter>
   </defs>
   <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#bg)"/>
-  <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#grid)" opacity="${dark ? 0.62 : 0.54}"/>
   <path d="M 0 502 C 200 460 320 590 540 536 C 760 482 830 392 1200 438 L 1200 630 L 0 630 Z" fill="${surfaceHigh}" opacity="${dark ? 0.52 : 0.66}"/>
   <path d="M 84 532 L 1116 532" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
   <g filter="url(#soft-shadow)">
