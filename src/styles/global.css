@@ -314,7 +314,6 @@ summary {
   width: min(760px, 72vw);
   height: min(360px, 36vw);
   content: "";
-  background: radial-gradient(closest-side, rgba(195, 155, 255, 0.16), transparent 72%);
   filter: blur(18px);
   opacity: 0.9;
   transform: translate(-50%, -50%);
@@ -327,7 +326,6 @@ summary {
   width: min(820px, 96vw);
   aspect-ratio: 5045 / 2175;
   content: "";
-  background: var(--surface);
   border-radius: 36%;
   filter: blur(18px);
   opacity: 0.94;
